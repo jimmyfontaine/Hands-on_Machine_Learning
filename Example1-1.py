@@ -5,13 +5,14 @@ import sklearn.linear_model
 import matplotlib
 import matplotlib.pyplot as plt
 
-from IPython import get_ipython
-get_ipython().run_line_magic('matplotlib', 'inline')
+# from IPython import get_ipython
+# get_ipython().run_line_magic('matplotlib', 'inline')
 
 # mpl.rc('axes', labelsize=14)
 # mpl.rc('xtick', labelsize=12)
 # mpl.rc('ytick', labelsize=12)
 # Where to save the figures
+# datapath = os.path.join("datasets", "lifesat", "")
 
 PROJECT_ROOT_DIR = "."
 CHAPTER_ID = "fundamentals"
@@ -39,8 +40,8 @@ def prepare_country_stats(oecd_bli, gdp_per_capita):
     return full_country_stats[["GDP per capita", 'Life satisfaction']].iloc[keep_indices]
 
 # Load the data
-oecd_bli = pd.read_csv(datapath + "oecd_bli_2015.csv", thousands=',')
-gdp_per_capita = pd.read_csv(datapath + "gdp_per_capita.csv",thousands=',',delimiter='\t',
+oecd_bli = pd.read_csv("oecd_bli_2015.csv", thousands=',')
+gdp_per_capita = pd.read_csv("gdp_per_capita.csv", thousands=',', delimiter='\t',
                              encoding='latin1', na_values="n/a")
 
 # Prepre the data
